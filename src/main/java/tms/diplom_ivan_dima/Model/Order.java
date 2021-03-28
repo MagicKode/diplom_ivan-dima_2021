@@ -11,9 +11,9 @@ import javax.persistence.Id;
 import java.time.LocalDate;
 import java.util.List;
 
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
 @Entity
 public class Order {
 
