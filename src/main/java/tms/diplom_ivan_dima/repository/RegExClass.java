@@ -6,7 +6,7 @@ import java.util.regex.Pattern;
 public class RegExClass {
     private static final String LOGIN_AND_PASS_CHECK = "^[а-яА-Яa-zA-Z0-9_-]+$";
     private static final String DOUBLE_CHECK = "^\\d+(\\.\\d+)?";
-    private static final String BIG_DECIMAL_CHEK = "";
+    private static final String BIG_DECIMAL_CHECK = "";
     private static final String NAME_AND_LASTNAME_CHECK = "^[а-яА-Яa-zA-Z-]+$";
     private static final String EMAIL_CHECK = "^[a-zA-Z0-9_.-]+@[a-zA-Z0-9-._]+\\.[a-zA-Z0-9-.]+$";
     private static final String IS_NUMERIC = "^\\d+$";
