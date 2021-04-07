@@ -9,4 +9,7 @@ import tms.diplom_ivan_dima.Model.Product;
 @Repository
 public interface ProductRepository extends JpaRepository <Product, Long> {
 
+    void deleteProductByName(String name);
+    //getProductByName(String name);
+  
 }
