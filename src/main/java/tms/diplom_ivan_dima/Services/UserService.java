@@ -59,5 +59,52 @@ public class UserService {
             return userRepository.getUserByUserName(userName);
         }
     }
+    public User getUserById(long id) {
+        if (userRepository.getUserById(id) == null) {
+            throw new UserNotFoundException("User is not found");
+        } else {
+            return userRepository.getOne(id);
+        }
+    }
+
+    public void updateUserPasswordByUsername(String username, String newPassword) {
+        User user = getUserByUserName(username);
+        if (getUserByUserName(username).equals(user)) {
+            userRepository.getUserByUsername(username).setPassword(newPassword);
+        } else {
+            throw new UserNotFoundException("User is not found");
+        }
+    }
+
+    public void updateUserPasswordById(long id, String newPassword) {
+        User user = getUserById(id);
+        if (getUserById(id).equals(user)) {
+            userRepository.getUserById(id).setPassword(newPassword);
+        } else {
+            throw new UserNotFoundException("User is not found");
+        }
+    }
+
+    public void updateUserNameByUsername(String username, String newUsername) {
+        User user = getUserByUserName(username);
+        if (getUserByUserName(username).equals(user)) {
+            userRepository.getUserByUsername(username).setUsername(newUsername);
+        } else {
+            throw new UserNotFoundException("User is not found");
+        }
+    }
+
+    public void updateUserNameById(long id, String newUsername) {
+        User user = getUserById(id);
+        if (getUserById(id).equals(user)) {
+            userRepository.getUserById(id).setUsername(newUsername);
+        } else {
+            throw new UserNotFoundException("User is not found");
+        }
+    }
+
+    public boolean isPasswordCorrect(String username, String password) {
+        return getUserByUserName(username).getPassword().equals(password);
+    }
 
 }
