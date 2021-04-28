@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      lang="en">
+<head xmlns:th="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml">
+    <meta charset="UTF-8">
+    <title>userCabinet</title>
+    <header th:insert="fragments/_header"></header>
+</head>
+
+<body>
+<h1> Кабинет пользователя_userName </h1>   //передать имя пользователя, отобразить в строке
+<p>Каталог товаров</p>
+<p>Моя корзина</p>
+<p>Профиль</p>
+
+<a th:href="@{/}">Log out</a><br>
+<a th:href="@{/}">На главную страницу</a><br>
+
+</body>
+</html>

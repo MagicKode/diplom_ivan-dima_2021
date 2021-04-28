@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Order</title>
+    <header th:insert="fragments/_header"></header>
+</head>
+<body>
+
+<h1>Оформить заказ</h1>
+<!--<p>Добавить книгу к заказу</p><br>-->
+
+
+<a th:href="@{/user/auth}">Авторизация</a><br>
+<a th:href="@{/user/reg}">Регистрация</a><br>
+<a th:href="@{/order/newOrder}">Новый заказ</a><br>
+</body>
+</html>

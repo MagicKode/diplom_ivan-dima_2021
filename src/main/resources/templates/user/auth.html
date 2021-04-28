@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Authorization</title>
+    <header th:insert="fragments/_header"></header>
+</head>
+<body>
+
+<h1>Авторизация</h1>
+
+<form method="post" th:action="@{/user/auth}" th:object="${ModelAttribute}">
+    <input type="text" th:field="*{username}"/>
+    <input type="password" th:field="*{password}"/>
+    <button><input type="submit" value="Submit"/></button>
+</form>
+
+
+<a th:href="@{/}">На главную страницу</a>
+</body>
+</html>

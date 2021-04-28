@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <header>
+        <header th:insert="fragments/_header"></header>
+    </header>
+</head>
+<body>
+
+<p>BOOKTICKET</p>
+
+<h2 th:object="${bookForBasket}" th:text="*{name}"></h2><br>
+<h3 th:text="${bookForBasket.author.name} + ' ' + ${bookForBasket.author.lastName}"></h3>
+<h4 th:text="'Цена: ' + ${bookForBasket.price}"></h4><br>
+
+<form method="post" th:action="@{/book/bookTicket/__${bookForBasket.id}__}">
+    <input type="submit" value="Добавить в корзину">
+</form>
+<div th:if="${addedBookToBasketMessage} != null">
+    <p th:text="${addedBookToBasketMessage}"></p>
+</div>
+
+<div th:if="${bookAlreadyAdded} != null">
+    <p th:text="${bookAlreadyAdded}"></p>
+</div>
+
+
+
+<form method="get" th:action="@{/order/bookShelf}">
+    <input type="submit" value="Вернуться к списку">
+</form>
+<form method="get" th:action="@{/order/basket}">
+    <input type="submit" value="Перейти в корзину">
+</form>
+
+
+</body>
+</html>

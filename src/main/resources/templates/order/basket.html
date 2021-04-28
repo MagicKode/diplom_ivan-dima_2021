@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Basket</title>
+    <header th:insert="fragments/_header"></header>
+</head>
+<body>
+
+<h3>Basket</h3>
+<tr th:object="${userBasket}">
+    <p th:if="${userBasket.bookSet} != null">
+    <p th:each="book : ${userBasket.bookSet}" th:text="${book.name}">
+        <a th:href="@{book/removeBookFromBasket/__${book.id}__}">Удалить из корзины</a>
+        <br>
+    </p>
+
+    <div th:if="${userBasket.bookSet} == null">
+        <p>Корзина пуста</p>
+    </div>
+
+</tr>
+
+
+<form method="get" th:action="@{/order/bookShelf}">
+    <input type="submit" value="вернуться к списку">
+</form>
+
+<a th:href="@{/}">На главную страницу</a><br>
+
+
+</body>
+</html>

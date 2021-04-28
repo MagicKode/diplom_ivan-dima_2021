@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      lang="en">
+<head xmlns:th="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml">
+    <meta charset="UTF-8">
+    <title>managerCabinet</title>
+    <header th:insert="fragments/_header"></header>
+</head>
+
+<body>
+<h1> Кабинет менеджера_managerName </h1>   //передать имя менеджера, отобразить в строке
+<p>Просмотр всех заказов</p>
+<p>Обработка заказа</p>
+<p>Оформление заказа</p>
+<p>Профиль</p>
+
+<a th:href="@{/}">Log out</a><br>
+<a th:href="@{/}">На главную страницу</a><br>
+
+</body>
+</html>>
