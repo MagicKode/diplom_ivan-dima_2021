@@ -2,6 +2,7 @@ package tms.diplom_ivan_dima.Model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -12,6 +13,7 @@ import java.util.List;
 @AllArgsConstructor
 
 public class BasketList { //создаем Карзину-список
+
 
     private static List<Basket> basketList = new ArrayList<>();
 
