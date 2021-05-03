@@ -18,13 +18,13 @@ public class OrderController {
     private OrderService orderService;
 
     @GetMapping(path = "/newOrder")
-    public ModelAndView newOrderPage(@ModelAttribute("ModelAttribute")Order order, ModelAndView modelAndView){
+    public ModelAndView newOrderPage(@ModelAttribute("ModelAttribute") Order order, ModelAndView modelAndView) {
         modelAndView.setViewName("/order/newOrder");
         return modelAndView;
     }
 
     @PostMapping(path = "/newOrder")
-    public ModelAndView createNewOrder(@ModelAttribute("ModelAttribute") Order order, ModelAndView modelAndView){
+    public ModelAndView createNewOrder(@ModelAttribute("ModelAttribute") Order order, ModelAndView modelAndView) {
         modelAndView.setViewName("redirect:/userCabinet");
         orderService.addNewOrder(order);
         return modelAndView;

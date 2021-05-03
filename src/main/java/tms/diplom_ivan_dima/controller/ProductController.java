@@ -30,7 +30,7 @@ public class ProductController {
     ProductService productService;
 
     @GetMapping(path = "/product/{productId}")  //??
-    public ModelAndView showProductTicket(@PathVariable Long productId, ModelAndView modelAndView, HttpSession httpSession){
+    public ModelAndView showProductTicket(@PathVariable Long productId, ModelAndView modelAndView, HttpSession httpSession) {
         Product productfoForBasket = productService.getProductById(productId);
         modelAndView.addObject("productForBasket", productfoForBasket);
         modelAndView.setViewName("/product/productTicket");
@@ -38,14 +38,14 @@ public class ProductController {
     }
 
     @PostMapping(path = "/productTicket/{productId}")
-    public ModelAndView putProductInBasket(@PathVariable Long productId, ModelAndView modelAndView, HttpSession httpSession){
+    public ModelAndView putProductInBasket(@PathVariable Long productId, ModelAndView modelAndView, HttpSession httpSession) {
         Product productForBasket = productService.getProductById(productId);
         Basket userBasket = (Basket) httpSession.getAttribute("userBasket");
-        if (!basketService.isProductExistInBasket(userBasket.getProductSet(), productForBasket)){
+        if (!basketService.isProductExistInBasket(userBasket.getProductSet(), productForBasket)) {
             userBasket.getProductSet().add(productForBasket);
-            modelAndView.addObject("addedProductToBasketMessage", "product " + productForBasket.getName()+ " added");
-        }else {
-            modelAndView.addObject("productAlreadyAdded", "Product "+ " is already int basket");
+            modelAndView.addObject("addedProductToBasketMessage", "product " + productForBasket.getName() + " added");
+        } else {
+            modelAndView.addObject("productAlreadyAdded", "Product " + " is already int basket");
         }
         modelAndView.addObject("productForBasket", productForBasket);
         modelAndView.setViewName("/product/productTicket");

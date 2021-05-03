@@ -17,30 +17,30 @@ public class BasketList { //создаем Карзину-список
 
     private static List<Basket> basketList = new ArrayList<>();
 
-    public void addProductROProductList (Basket basket){
+    public void addProductROProductList(Basket basket) {
         basketList.add(basket);
     }
 
-    public Basket getProdustByUserId(long userId){
-        for (Basket basket : basketList){
-            if (basket.getUserId() == userId){
+    public Basket getProdustByUserId(long userId) {
+        for (Basket basket : basketList) {
+            if (basket.getUserId() == userId) {
                 return basket;
             }
         }
         return null;
     }
 
-    public void removeBasketByUserId (long userId){
-        for (Basket basket : basketList){
-            if (basket.getUserId() == userId){
+    public void removeBasketByUserId(long userId) {
+        for (Basket basket : basketList) {
+            if (basket.getUserId() == userId) {
                 basketList.remove(basket);
             }
         }
     }
 
-    public boolean basketExistByUserId(long userId){
-        for (Basket basket : basketList){
-            if (basket.getUserId() == userId){
+    public boolean basketExistByUserId(long userId) {
+        for (Basket basket : basketList) {
+            if (basket.getUserId() == userId) {
                 return true;
             }
         }

@@ -12,25 +12,25 @@ public class RegExClass {
     private static final String IS_NUMERIC = "^\\d+$";
     private static final String DIGIT_NOT_ZERO_CHECK = "^[1-9]+$";
 
-    public static boolean isEmailValid (String eMail) {
+    public static boolean isEmailValid(String eMail) {
         Pattern pattern = Pattern.compile(EMAIL_CHECK);
         Matcher matcher = pattern.matcher(eMail);
         return matcher.matches();
     }
 
-    public static boolean validationLogin (String nameString) {
+    public static boolean validationLogin(String nameString) {
         return nameString.matches(LOGIN_AND_PASS_CHECK);
     }
 
-    public static boolean validationPassword (String passwordString) {
+    public static boolean validationPassword(String passwordString) {
         return passwordString.matches(LOGIN_AND_PASS_CHECK);
     }
 
-    public static boolean validationName (String nameString) {
+    public static boolean validationName(String nameString) {
         return nameString.matches(NAME_AND_LASTNAME_CHECK);
     }
 
-    public static boolean validationLastName (String nameString) {
+    public static boolean validationLastName(String nameString) {
         return nameString.matches(NAME_AND_LASTNAME_CHECK);
     }
 
@@ -38,11 +38,11 @@ public class RegExClass {
         return string.matches(IS_NUMERIC);
     }
 
-    public static boolean isDouble (String string) {
+    public static boolean isDouble(String string) {
         return string.matches(DOUBLE_CHECK);
     }
 
-    public static boolean isDoubleNotZero (String string) {
+    public static boolean isDoubleNotZero(String string) {
         return (isDouble(string) && string.matches(DIGIT_NOT_ZERO_CHECK));
     }
 }

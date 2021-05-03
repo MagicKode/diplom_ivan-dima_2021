@@ -11,9 +11,13 @@ import java.util.List;
 public interface BasketRepository extends JpaRepository<Basket, Long> {
 
     List<Product> findAllByUserId(long id);
+
     Basket getByUserId(long userId);
+
     Basket findByUserId(long userId);
+
     boolean existByUserId(long userId);
+
     void deleteByUserId(long userId);
 
 }

@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import tms.diplom_ivan_dima.Model.User;
 import tms.diplom_ivan_dima.Repositories.UserRepository;
-import tms.diplom_ivan_dima.exceprions.UserNotFoundException;
+import tms.diplom_ivan_dima.exceptions.UserNotFoundException;
 
 @Service
 public class UserService {
@@ -27,38 +27,39 @@ public class UserService {
 
     public void deleteUserById(long id) { //удаление юзера по ID
         User user = getUserById(id);
-        if (getUserById(id).equals(user)){
+        if (getUserById(id).equals(user)) {
             userRepository.deleteById(id);
-        }else {
+        } else {
             throw new UserNotFoundException("User is not found! Please, check userID!")
         }
     }
 
-    public boolean isUserExistByUserName(String userName){ //проверка о наличии юзера по Имени
+    public boolean isUserExistByUserName(String userName) { //проверка о наличии юзера по Имени
         User user = getUserByUserName(userName);
-        if (getUserByUserName(userName).equals(user)){
+        if (getUserByUserName(userName).equals(user)) {
             return userRepository.existUserByUserName(userName);
-        }else {
+        } else {
             throw new UserNotFoundException("User is not found!");
         }
     }
 
-    public boolean isUserExistById(long id){ // проверка на наличие юзера по ID
+    public boolean isUserExistById(long id) { // проверка на наличие юзера по ID
         User user = getUserByUserId(id);
-        if (getUserByUserId(id).equals(user)){
+        if (getUserByUserId(id).equals(user)) {
             return userRepository.existsById(id);
-        }else {
+        } else {
             throw new UserNotFoundException("User not found!  Chec userID!");
         }
     }
 
-    public User getUserByUserName(String userName){ // найти Юзера по имени
-        if (userRepository.getUserByUserName(userName)==null){
+    public User getUserByUserName(String userName) { // найти Юзера по имени
+        if (userRepository.getUserByUserName(userName) == null) {
             throw new UserNotFoundException("User not found");
-        }else {
+        } else {
             return userRepository.getUserByUserName(userName);
         }
     }
+
     public User getUserById(long id) {
         if (userRepository.getUserById(id) == null) {
             throw new UserNotFoundException("User is not found");

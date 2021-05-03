@@ -14,13 +14,13 @@ import tms.diplom_ivan_dima.Model.Product;
 public class testController {
 
     @GetMapping(path = "/test")
-    public ModelAndView modelAndView(@ModelAttribute Basket prod, ModelAndView modelAndView){
+    public ModelAndView modelAndView(@ModelAttribute Basket prod, ModelAndView modelAndView) {
         modelAndView.setViewName("/product/test");
         return modelAndView;
     }
 
     @PostMapping(path = "/test")
-    public ModelAndView modelAndViewPost(@ModelAttribute("prod")Basket prod, ModelAndView modelAndView){
+    public ModelAndView modelAndViewPost(@ModelAttribute("prod") Basket prod, ModelAndView modelAndView) {
         modelAndView.setViewName("/product/test");
         return modelAndView;
     }

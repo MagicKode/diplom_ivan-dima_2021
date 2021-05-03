@@ -8,8 +8,8 @@ import java.util.Set;
 @Service
 public class BasketService {
 
-    public boolean isProductExistInBasket(Set<Product> productSet, Product product){
-        for(Product productInBasketSet : productSet){
+    public boolean isProductExistInBasket(Set<Product> productSet, Product product) {
+        for (Product productInBasketSet : productSet) {
             return productInBasketSet.equals(product);
         }
         return false;

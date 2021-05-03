@@ -12,11 +12,15 @@ import java.util.List;
 
 @Component
 @Repository
-public interface OrderRepository extends JpaRepository <Order, Long>{
+public interface OrderRepository extends JpaRepository<Order, Long> {
 
     List<Order> findOrderByUser(User user);
+
     List<Order> findOrderByOrderStatus(OrderStatus orderStatus);
+
     List<Order> findOrdersByProductListIsContaining(Product product);
+
     void deleteOrderByUser(User user);
+
     void deleteOrderByOrderStatus(OrderStatus orderStatus);
 }

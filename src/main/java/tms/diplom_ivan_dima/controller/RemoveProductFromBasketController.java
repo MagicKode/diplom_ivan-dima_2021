@@ -19,7 +19,7 @@ public class RemoveProductFromBasketController {
     ProductService productService;
 
     @PostMapping(path = "/removeProductFromBasket/{productId}")
-    public ModelAndView removeProductFromBasket(@PathVariable long productId, ModelAndView modelAndView, HttpSession httpSession){
+    public ModelAndView removeProductFromBasket(@PathVariable long productId, ModelAndView modelAndView, HttpSession httpSession) {
         Basket userBasket = (Basket) httpSession.getAttribute("userBasket");
         ((Basket) httpSession.getAttribute("userBasket")).getProductSet().remove(productService.getProductById(productId));
         modelAndView.addObject("userBasket", httpSession.getAttribute("userBasket"));

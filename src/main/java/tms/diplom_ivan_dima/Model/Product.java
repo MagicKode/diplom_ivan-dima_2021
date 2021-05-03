@@ -24,7 +24,6 @@ public class Product {
     private double productPtice;
 
 
-
     private Category category; //категория товара
     private ProductStatus productStatus; //статус товара
 

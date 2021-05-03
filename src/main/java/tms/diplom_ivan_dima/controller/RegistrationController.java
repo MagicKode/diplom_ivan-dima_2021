@@ -18,41 +18,43 @@ public class RegistrationController {
     private UserService userService;
 
     @GetMapping(path = "/reg")
-    public ModelAndView getRegPage(ModelAndView modelAndView){
+    public ModelAndView getRegPage(ModelAndView modelAndView) {
         modelAndView.setViewName("/user/reg");
         modelAndView.addObject("ModelAttribute", new UserService());
         return modelAndView;
     }
 
     @PostMapping(path = "/reg")
-    public ModelAndView postRegPage(@ModelAttribute("ModelAttribute")User user, ModelAndView modelAndView){
+    public ModelAndView postRegPage(@ModelAttribute("ModelAttribute") User user, ModelAndView modelAndView) {
         modelAndView.setViewName("/iser/reg");
-        if (!userService.isUserExistByUserName(user.getUserName())){
+        if (!userService.isUserExistByUserName(user.getUserName())) {
             userService.addUser(user);
             modelAndView.setViewName("redirect:/user/outh");
-        }else {
-            modelAndView.addObject("userIsExistsError", "User with this "+" username is already exists!");
-        } return modelAndView;
+        } else {
+            modelAndView.addObject("userIsExistsError", "User with this " + " username is already exists!");
+        }
+        return modelAndView;
     }
 
     @GetMapping(path = "/auth")
-    public ModelAndView getAuthPage(@ModelAttribute("ModelAttribute")User user, ModelAndView modelAndView){
+    public ModelAndView getAuthPage(@ModelAttribute("ModelAttribute") User user, ModelAndView modelAndView) {
         modelAndView.setViewName("/user/auth");
         return modelAndView;
     }
 
     @PostMapping(path = "/auth")
-    public ModelAndView postAuthPage(@ModelAttribute("ModelAttribute")User user, ModelAndView modelAndView){
+    public ModelAndView postAuthPage(@ModelAttribute("ModelAttribute") User user, ModelAndView modelAndView) {
         modelAndView.setViewName("/user/auth");
-        if (userService.isUserExistByUserName(user.getUserName())){
-            if (userService.isPasswordCorrect(user.getUserName(), user.getPassword())){
+        if (userService.isUserExistByUserName(user.getUserName())) {
+            if (userService.isPasswordCorrect(user.getUserName(), user.getPassword())) {
                 modelAndView.addObject("userAuthOK", "User Authorization OK");
                 modelAndView.setViewName("redirect:/user/auth");
-            }else {
+            } else {
                 modelAndView.addObject("Password incorrect", "Password incorrect");
             }
-        }else {
-            modelAndView.addObject("Name incorrect","Name incorrect");
-        }return modelAndView;
+        } else {
+            modelAndView.addObject("Name incorrect", "Name incorrect");
+        }
+        return modelAndView;
     }
 }

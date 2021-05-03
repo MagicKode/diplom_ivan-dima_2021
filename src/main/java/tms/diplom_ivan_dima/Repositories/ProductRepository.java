@@ -6,9 +6,10 @@ import tms.diplom_ivan_dima.Model.Product;
 import java.util.List;
 
 
-public interface  ProductRepository extends JpaRepository <Product, Long> {
+public interface ProductRepository extends JpaRepository<Product, Long> {
 
-   void deleteProductByName(String Name);
-   Product getProductNyName(String name);
+    void deleteProductByName(String Name);
+
+    Product getProductNyName(String name);
 
 }

@@ -23,20 +23,20 @@ public class Basket {
     @OneToMany(cascade = CascadeType.ALL)
     private Set<Product> productSet;
 
-    public Basket(Set<Product> productSet){
+    public Basket(Set<Product> productSet) {
         this.productSet = productSet;
     }
 
-    public Set<Product> getProductSet(){
+    public Set<Product> getProductSet() {
         return productSet;
     }
 
-    public Basket(long userId, Set<Product> productSet){
+    public Basket(long userId, Set<Product> productSet) {
         this.userId = userId;
         this.productSet = productSet;
     }
 
-    public Basket(long userId){
+    public Basket(long userId) {
         this.userId = userId;
     }
 }
