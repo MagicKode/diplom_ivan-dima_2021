@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <meta charset="UTF-8">
+    <title>Search</title>
+</head>
+<body>
+<header th:insert="_header"></header>
+<br>
+<p>Search by Category</p>
+<form th:action="@{/search}" method="post">
+    <input type="text" th:name="productStatus">
+    <button type="submit">Search</button>
+</form>
+<br>
+<div class="container">
+    <div th:if="${not #lists.isEmpty(result)}">
+        <tr th:each="item : ${result}">
+            <div class="card" style="width: 18rem; text-align:center; display:inline-block;">
+                <img th:src="${item.picLink}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title" th:text="${product.productName}"></h5>
+                    <p class="card-text" th:text="${product.productDesc}"></p>
+                    <p class="card-text" th:text="${product.productPrice} + '$'"></p>
+                    <a th:href="@{/store/item/view/{prodyctId}(productId=${product.productId})}" class="btn btn-primary">Take a look</a>
+                    <br>
+                </div>
+                <br>
+            </div>
+    </div>
+</div>
+<h2 th:text="${nothingFound}" style="color: red"></h2>
+<br>
+<p>Search by Name</p>
+<form th:action="@{/search/name}" method="post">
+    <input type="text" th:name="productName">
+    <button type="submit">Search</button>
+</form>
+<br>
+<div th:if="${not #lists.isEmpty(testHits)}">
+    <h4>Found Products:</h4><p th:text="${testTotalHitCount}" style="padding-left: 30px"></p>
+</div>
+<div th:if="${#lists.isEmpty(testHits)}">
+    <p th:text="${noProductsFound}" style="color:red;"></p>
+</div>
+<div class="container">
+    <tr th:each="foundProduct : ${testHits}">
+        <div class="card" style="width: 18rem; text-align:center; display:inline-block;">
+            <img th:src="${foundProduct.picLink}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title" th:text="${foundProduct.productName}"></h5>
+                <p class="card-text" th:text="${foundProduct.productDesc}"></p>
+                <p class="card-text" th:text="${foundProduct.productPrice} + '$'"></p>
+                <a th:href="@{/store/product/view/{productId}(productId=${foundProduct.productId})}" class="btn btn-primary">Take a look</a>
+                <br>
+            </div>
+            <br>
+        </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <meta charset="UTF-8">
+    <title>aBay Main</title>
+</head>
+<body>
+<header th:insert="_header"></header>
+<p><h1 style="text-align:center;">Today we have in stock...</h1></p>
+<div class="container">
+    <div th:if="${not #lists.isEmpty(products)}">
+        <tr th:each="product : ${products}">
+            <div class="card" style="width: 18rem; text-align:center; display:inline-block;">
+                <img th:src="${product.picLink}" class="card-img-top" alt="..." height="300" width="300">
+                <br>
+                <div class="card-body">
+                    <h5 class="card-title" th:text="${product.productName}"></h5>
+                    <p class="card-text" th:text="${product.productDesc}"></p>
+                    <p class="card-text" th:text="${product.productPrice} + '$'"></p>
+                    <a th:href="@{/store/product/view/{productId}(productId=${product.productId})}" class="btn btn-primary">Take a look</a>
+                    <br>
+                </div>
+                <br>
+            </div>
+    </div>
+</div>
+</body>
+</html>

@@ -31,6 +31,8 @@ public class ProductService {
         return productRepository.getOne(id);
     }
 
+
+
     public Product getProductByName(String name) {  //нахождение товара по Наименованию
         return productRepository.getProductByName(name);
     }
@@ -41,7 +43,7 @@ public class ProductService {
         productRepository.save(productUpdateDescription);
     }
 
-    public void editProductPrice(String name, String price) { //доюавление цены продукта
+    public void editProductPrice(String name, String price) { //добавление цены продукта
         Product productUpdatePrice = productRepository.getProductByName(name);
         productUpdatePrice.setPrice(price);
         productRepository.save(productUpdatePrice);

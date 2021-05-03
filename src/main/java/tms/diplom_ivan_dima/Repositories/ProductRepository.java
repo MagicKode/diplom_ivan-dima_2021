@@ -10,6 +10,6 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
 
     void deleteProductByName(String Name);
 
-    Product getProductNyName(String name);
+    Product getProductByName(String name);
 
 }

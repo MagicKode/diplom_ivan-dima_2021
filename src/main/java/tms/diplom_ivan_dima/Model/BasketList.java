@@ -2,22 +2,28 @@ package tms.diplom_ivan_dima.Model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import java.util.ArrayList;
 import java.util.List;
 
 @Data
+@Entity
 @Component
 @AllArgsConstructor
+@NoArgsConstructor
+@Table(name = "basket")
 
 public class BasketList { //создаем Карзину-список
 
 
     private static List<Basket> basketList = new ArrayList<>();
 
-    public void addProductROProductList(Basket basket) {
+    public void addProductToProductList(Basket basket) {
         basketList.add(basket);
     }
 

@@ -3,15 +3,16 @@ package tms.diplom_ivan_dima.Model;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
 import java.util.Objects;
-
-@AllArgsConstructor
-@NoArgsConstructor
 @Data
 @Entity
-@Table
+@Component
+@AllArgsConstructor
+@NoArgsConstructor
+@Table(name = "product")
 public class Product {
 
     @Id
