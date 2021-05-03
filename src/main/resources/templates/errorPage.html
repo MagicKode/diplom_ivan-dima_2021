@@ -5,10 +5,9 @@
     <title>ErrorPage</title>
 </head>
 <body>
-<p th:text="${message}"></p>
-<br>
-<form th:action="@{/}" method="get">
-    <input type="submit" value="Return to home page"/>
-</form>
+<header th:insert="_header"></header>
+<h2 style="padding-left: 30px">Oops... something went wrong!</h2>
+<a style="padding-left: 30px" href="/">Return to main page</a>
+
 </body>
 </html>
