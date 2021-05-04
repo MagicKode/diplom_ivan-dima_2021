@@ -1,7 +1,7 @@
-package tms.diplom_ivan_dima.services;
+package tms.diplom_ivan_dima.Services;
 
 import org.springframework.stereotype.Service;
-import tms.diplom_ivan_dima.model.Product;
+import tms.diplom_ivan_dima.Model.Product;
 
 import java.util.Set;
 

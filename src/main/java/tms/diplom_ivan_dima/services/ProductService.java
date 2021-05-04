@@ -1,9 +1,9 @@
-package tms.diplom_ivan_dima.services;
+package tms.diplom_ivan_dima.Services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import tms.diplom_ivan_dima.model.Product;
-import tms.diplom_ivan_dima.repositories.ProductRepository;
+import tms.diplom_ivan_dima.Model.Product;
+import tms.diplom_ivan_dima.Repositories.ProductRepository;
 
 @Service
 public class ProductService {
@@ -37,13 +37,13 @@ public class ProductService {
         return productRepository.getProductByName(name);
     }
 
-    public void editProductDescription(String name, String description) {
+    public void editProductDescription(String name, String description) {  //добавление описания продукта
         Product productUpdateDescription = productRepository.getProductByName(name);
         productUpdateDescription.setDescription(description);
         productRepository.save(productUpdateDescription);
     }
 
-    public void editProductPrice(String name, String price) {
+    public void editProductPrice(String name, String price) { //добавление цены продукта
         Product productUpdatePrice = productRepository.getProductByName(name);
         productUpdatePrice.setPrice(price);
         productRepository.save(productUpdatePrice);
