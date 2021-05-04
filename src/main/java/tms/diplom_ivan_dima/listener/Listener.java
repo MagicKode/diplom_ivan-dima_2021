@@ -1,6 +1,6 @@
-package tms.diplom_ivan_dima.Listener;
+package tms.diplom_ivan_dima.listener;
 
-import tms.diplom_ivan_dima.Model.Cart;
+import tms.diplom_ivan_dima.model.Cart;
 
 import javax.servlet.http.HttpSessionEvent;
 import javax.servlet.http.HttpSessionListener;

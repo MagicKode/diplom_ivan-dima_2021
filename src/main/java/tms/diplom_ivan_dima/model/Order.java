@@ -1,4 +1,4 @@
-package tms.diplom_ivan_dima.Model;
+package tms.diplom_ivan_dima.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -16,9 +16,9 @@ import java.util.List;
 public class Order {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY) // универсальный инкремент для ID.
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    private OrderStatus orderStatus; // статус товара
+    private OrderStatus orderStatus;
 
     @OneToMany(cascade = CascadeType.ALL)
     private List<Product> productList;
@@ -27,9 +27,9 @@ public class Order {
     private User user;
 
 
-    private String startData; //дата поступления заказа
-    private String endData; // дата отгрузки
-    private LocalDate date; // дата
+    private String startData;
+    private String endData;
+    private LocalDate date;
 
 
 }

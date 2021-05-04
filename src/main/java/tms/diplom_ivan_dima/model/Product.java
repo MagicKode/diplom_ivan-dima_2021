@@ -1,4 +1,4 @@
-package tms.diplom_ivan_dima.Model;
+package tms.diplom_ivan_dima.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -17,16 +17,16 @@ public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;// ID товара
-    private String name; //наименование товара
+    private long id;
+    private String name;
     private String description;
 
     @ManyToOne
     private double productPtice;
 
 
-    private Category category; //категория товара
-    private ProductStatus productStatus; //статус товара
+    private Category category;
+    private ProductStatus productStatus;
 
     public Product(String name) {
         this.name = name;

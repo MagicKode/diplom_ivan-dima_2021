@@ -1,4 +1,4 @@
-package tms.diplom_ivan_dima.Model;
+package tms.diplom_ivan_dima.model;
 
 public enum UserStatus {
 

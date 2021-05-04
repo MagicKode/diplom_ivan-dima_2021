@@ -9,8 +9,8 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.annotation.web.reactive.EnableWebFluxSecurity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import tms.diplom_ivan_dima.Listener.Listener;
-import tms.diplom_ivan_dima.Services.UserService;
+import tms.diplom_ivan_dima.listener.Listener;
+import tms.diplom_ivan_dima.services.UserService;
 
 import javax.servlet.http.HttpSessionListener;
 

@@ -1,12 +1,12 @@
-package tms.diplom_ivan_dima.Repositories;
+package tms.diplom_ivan_dima.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
-import tms.diplom_ivan_dima.Model.Order;
-import tms.diplom_ivan_dima.Model.OrderStatus;
-import tms.diplom_ivan_dima.Model.Product;
-import tms.diplom_ivan_dima.Model.User;
+import tms.diplom_ivan_dima.model.Order;
+import tms.diplom_ivan_dima.model.OrderStatus;
+import tms.diplom_ivan_dima.model.Product;
+import tms.diplom_ivan_dima.model.User;
 
 import java.util.List;
 

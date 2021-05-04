@@ -1,9 +1,8 @@
-package tms.diplom_ivan_dima.Model;
+package tms.diplom_ivan_dima.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import javax.persistence.Entity;
@@ -18,7 +17,7 @@ import java.util.List;
 @NoArgsConstructor
 @Table(name = "basket")
 
-public class BasketList { //создаем Карзину-список
+public class BasketList {
 
 
     private static List<Basket> basketList = new ArrayList<>();

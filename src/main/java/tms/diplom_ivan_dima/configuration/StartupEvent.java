@@ -5,7 +5,7 @@ import org.hibernate.search.mapper.orm.massindexing.MassIndexer;
 import org.hibernate.search.mapper.orm.session.SearchSession;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
-import tms.diplom_ivan_dima.Model.Product;
+import tms.diplom_ivan_dima.model.Product;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;

@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
-import tms.diplom_ivan_dima.Model.Order;
-import tms.diplom_ivan_dima.Services.OrderService;
+import tms.diplom_ivan_dima.model.Order;
+import tms.diplom_ivan_dima.services.OrderService;
 
 @Controller
 @RequestMapping(path = {"/order", "/user", "/"})

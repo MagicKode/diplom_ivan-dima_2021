@@ -5,10 +5,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
-import tms.diplom_ivan_dima.Model.Basket;
-import tms.diplom_ivan_dima.Services.BasketService;
-import tms.diplom_ivan_dima.Services.OrderService;
-import tms.diplom_ivan_dima.Services.UserService;
+import tms.diplom_ivan_dima.model.Basket;
+import tms.diplom_ivan_dima.services.BasketService;
+import tms.diplom_ivan_dima.services.OrderService;
+import tms.diplom_ivan_dima.services.UserService;
 
 import javax.servlet.http.HttpSession;
 

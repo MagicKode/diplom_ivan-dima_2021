@@ -7,9 +7,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
-import tms.diplom_ivan_dima.Model.Cart;
-import tms.diplom_ivan_dima.Model.Product;
-import tms.diplom_ivan_dima.Services.ProductService;
+import tms.diplom_ivan_dima.model.Cart;
+import tms.diplom_ivan_dima.model.Product;
+import tms.diplom_ivan_dima.services.ProductService;
 
 import javax.servlet.http.HttpSession;
 

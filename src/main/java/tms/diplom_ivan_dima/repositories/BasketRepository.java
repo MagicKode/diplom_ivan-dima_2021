@@ -1,9 +1,9 @@
-package tms.diplom_ivan_dima.Repositories;
+package tms.diplom_ivan_dima.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import tms.diplom_ivan_dima.Model.Basket;
-import tms.diplom_ivan_dima.Model.Product;
+import tms.diplom_ivan_dima.model.Basket;
+import tms.diplom_ivan_dima.model.Product;
 
 import java.util.List;
 
