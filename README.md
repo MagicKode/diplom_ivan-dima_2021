@@ -1,6 +1,6 @@
-<h1>TeachMeSkills diploma project by Dmitry 'MagicKode' Zavadski<h1>
+<h1>TeachMeSkills diploma project by Dmitry 'MagicKode' Zavadski and Ivan Zubkov<h1>
 
-### A simple version of online shop with finance buhgaltery, which contains basic registration, items, cart, full-text search, order and admin panel.
+### A simple version of online shop with finance buhgaltery, which contains basic registration, items, cart, full-text search, order and admin panel. Project includs a version of bookkeeping. 
 ---
 
 ### <h2>Used Technologies:<h2>
@@ -13,6 +13,8 @@
 ### Hibernate Search (elasticsearch)
 ### Hibernate Validator
 ### Validation Api
+### Docker
+
 ---
 
 ### Credentials for admin: 
