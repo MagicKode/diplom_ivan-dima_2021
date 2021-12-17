@@ -6,13 +6,10 @@
 ### <h2>Used Technologies:<h2>
 ### Java 8
 ### Spring Boot
-### Spring Security
 ### Thymeleaf
-### H2 Database
 ### Lombok
 ### Hibernate Search (elasticsearch)
 ### Hibernate Validator
-### Validation Api
 ### Docker
 
 ---
